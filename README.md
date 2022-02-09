@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Candy Machine V2 - BOOTSTRAP - Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+by [Halaprix](https://twitter.com/halaprix).<br/>Live preview [here](https://vol2.shapes.ltd/)<br/>
+1click deploy:<br/><br/>
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhalaprix%2Fshapes-mint-page-cm-v2&env=REACT_APP_CANDY_MACHINE_ID,REACT_APP_SOLANA_NETWORK,REACT_APP_SOLANA_RPC_HOST&envDescription=REACT_APP_CANDY_MACHINE_ID%20is%20the%20ID%20of%20your%20Candy%20Machine.%20REACT_APP_SOLANA_NETWORK%20is%20the%20network%20you%20deployed%20your%20CM%20%60devnet%60%20or%20%60mainnet-beta%60%20%20REACT_APP_SOLANA_RPC_HOST%20is%20the%20URL%20of%20the%20RPC%20you%20want%20to%20use%20eg%20%60https%3A%2F%2Fssc-dao.genesysgo.net%2F%20%60&project-name=candy-machine-v2-mint-web&repo-name=candy-machine-v2-mint-web&demo-title=Shapes%20V2&demo-description=Shapes%20VOL2%20mint%20website%20created%20using%20this%20repo.&demo-url=https%3A%2F%2Fvol2.shapes.ltd%2F)
 
-## Available Scripts
+![Imgur](https://i.imgur.com/i8DDwWp.png)
 
-In the project directory, you can run:
+# Installation
 
-### `npm start`
+0. Prerequisities:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   - [node.js](https://nodejs.org/en/download/)
+   - **yarn** - `npm add -g yarn` (run as root / su eg. `sudo npm add -g yarn`)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   `git clone https://github.com/halaprix/shapes-mint-page-cm-v2`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ` cd shapes-mint-page-cm-v2`
 
-### `npm run build`
+2. use yarn to install all dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   `yarn install`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Fill `.env-example` with your Candy Machine details (can be found in `.json` file in `.cache` directory, after CM upload). Rename the file to `.env`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Run yarn start to start the developement server.
 
-### `npm run eject`
+   `yarn start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5. If you are using traditional hosting, run `yarn build` and uplaod contents of the `build` folder to your hostings `public_html`
+6. (Optional) - If deploying to Vercel, use the ENV VARIABLES from `.env` file here or use one click prefilled deploy:<br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhalaprix%2Fshapes-mint-page-cm-v2&env=REACT_APP_CANDY_MACHINE_ID,REACT_APP_SOLANA_NETWORK,REACT_APP_SOLANA_RPC_HOST&envDescription=REACT_APP_CANDY_MACHINE_ID%20is%20the%20ID%20of%20your%20Candy%20Machine.%20REACT_APP_SOLANA_NETWORK%20is%20the%20network%20you%20deployed%20your%20CM%20%60devnet%60%20or%20%60mainnet-beta%60%20%20REACT_APP_SOLANA_RPC_HOST%20is%20the%20URL%20of%20the%20RPC%20you%20want%20to%20use%20eg%20%60https%3A%2F%2Fssc-dao.genesysgo.net%2F%20%60&project-name=candy-machine-v2-mint-web&repo-name=candy-machine-v2-mint-web&demo-title=Shapes%20V2&demo-description=Shapes%20VOL2%20mint%20website%20created%20using%20this%20repo.&demo-url=https%3A%2F%2Fvol2.shapes.ltd%2F)
+   <br/> ![](https://i.imgur.com/x5mHNxV.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Example configuration
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Devnet:
 
-## Learn More
+```
+- REACT_APP_SOLANA_NETWORK=devnet
+- REACT_APP_SOLANA_RPC_HOST=https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Mainnet-beta:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+- REACT_APP_SOLANA_NETWORK=mainnet-beta
+- REACT_APP_SOLANA_RPC_HOST=https://ssc-dao.genesysgo.net/
+```
+
+# Styling
+
+**Favicon, Phantom styling** - `index.html`<br/>
+
+- Use this [generator](https://realfavicongenerator.net/) to generate favicons, metadata and images, to be put to `/public`.
+
+**Buttons** - `/src/MintButton.tsx` and `src/Home.tsx`<br/>
+
+- Change the style of the buttons in `styled` components. `background: linear-gradient(29deg, #34342F 0%, #44C3A1 100%);` is reponsible for the button gradient.
+
+**Images** - `/public`<br/>
+
+- `/public/logo.png` is the top logo
+- `/public/animation.gif` is the middle container image.
+
+**Styles** - `/src/index.css`<br/>
+
+- Change the styles of the website. `background: linear-gradient(29deg, #34342f 0%, #5ff1cb 50%, #44c3a1 100%);` is the background gradient. You can generate the gradient using this [generator](https://cssgradient.io/)
+- change the `Paper` style (the three containers) in `/src/Home.tsx` :
+  ```
+  const StyledPaper = styled(Paper)`
+  padding: 24px;
+  background-color: #34342f;
+  border-radius: 6px;
+  margin: 10px;
+  `;
+  ```
+
+---
