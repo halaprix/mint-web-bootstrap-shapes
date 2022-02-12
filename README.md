@@ -15,9 +15,9 @@ by [Halaprix](https://twitter.com/halaprix).<br/>Live preview [here](https://vol
 
 1. Clone the repository:
 
-   `git clone https://github.com/halaprix/shapes-mint-page-cm-v2`
+   `git clone https://github.com/halaprix/mint-web-bootstrap-shapes`
 
-   ` cd shapes-mint-page-cm-v2`
+   ` cd mint-web-bootstrap-shapes`
 
 2. use yarn to install all dependencies:
 
